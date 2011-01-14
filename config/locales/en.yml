@@ -1,0 +1,11 @@
+# English strings go here for Rails i18n
+en:
+  save: "Save"
+  from: "from"
+  to: "to"
+  work_hours: "Work hours"
+  text_during_work_hours: "Text displayed during work hours"
+  text_not_during_work_hours: "Text displayed out of work hours"
+  field_text_during_work_hours: "Text"
+  field_text_not_during_work_hours: "Text"
+

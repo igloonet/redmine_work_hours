@@ -1,0 +1,8 @@
+<% localized_day_names = t('date.day_names') %>
+<% t('date.day_names',:locale => :en).each_with_index do |day_name, n| %>
+  <p>
+    <label><%= "#{localized_day_names[n]} #{t('from')} - #{t('to')}" %></label>
+    <%= text_field_tag "settings[#{day_name.downcase}_hours_from]", @settings["#{day_name.downcase}_hours_from"], :size => 6 %>
+    <%=  text_field_tag "settings[#{day_name.downcase}_hours_to]", @settings["#{day_name.downcase}_hours_to"], :size => 6 %>
+  </p>
+<% end %>

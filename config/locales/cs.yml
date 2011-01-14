@@ -1,0 +1,11 @@
+# Czech strings go here for Rails i18n
+cs:
+  save: "Uložit"
+  from: "od"
+  to: "do"
+  work_hours: "Pracovní doba"
+  text_during_work_hours: "Text zobrazený během pracovní doby"
+  text_not_during_work_hours: "Text zobrazený mimo pracovní dobu"
+  field_text_during_work_hours: "Text"
+  field_text_not_during_work_hours: "Text"
+

@@ -1,0 +1,27 @@
+<div id="work_hours_settings">
+  <% @work_hours_setting = WorkHoursProjectSetting.find_or_create(@project) %>
+
+<% labelled_tabular_form_for :setting, @work_hours_setting,
+    :url => {:controller => 'work_hours_settings',
+    :action => 'update', :id => @project, :tab => 'work_hours',
+    :partial => 'work_hours_settings/update',
+    :setting_id => @work_hours_setting.id} do |f| %>
+    <%= error_messages_for 'work_hours_setting' %>
+    <div class="box">
+      <b><%=h l(:text_during_work_hours)%>:</b>
+      <p><%= f.text_area :text_during_work_hours,
+                  :cols => 60,
+                  :rows => 10,
+                  :class => 'wiki-edit' %></p>
+
+      <b><%=h l(:text_not_during_work_hours)%>:</b>
+      <p><%= f.text_area :text_not_during_work_hours,
+                  :cols => 60,
+                  :rows => 10,
+                  :class => 'wiki-edit'%></p>
+    </div>
+    <%= submit_tag l(:button_update) %>
+  <% end %>
+
+  <%= wikitoolbar_for 'setting_text_during_work_hours' %>
+  <%= wikitoolbar_for 'setting_text_not_during_work_hours' %>

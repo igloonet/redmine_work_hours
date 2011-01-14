@@ -1,0 +1,32 @@
+= Work Hours plugin
+
+This little plugin allows you to set a text that is displayed at the top of issue form
+during issue creating or editing. You can set two different texts for specified time
+period. We use this plugin for our customers. They can see some notes during weekends or
+after work hours.
+
+= Install
+
+1. Put this plugin into Rails.root/vendor/plugins/redmine_work_hours
+2. Run rake db:migrate_plugins
+   - this will add create table for project settings
+3. Restart redmine if it's already running
+4. Configure the plugin (administration -> plugins -> configure)
+   - here you can set work hours for each day (0:00 - 0:00 can be used for weekends) 
+5. In project where you want to display texts turn on module Work hours 
+6. In project settings - tab Work hours - you can setup text displayed during and out of a period
+
+That's it, now you should be good to go
+
+= Changelog
+
+0.1 (2011-01-14)
+ * Plugin allows to display text when creating or updating issues
+
+= Future work
+
+Currently nothing comes to my mind, leave wishes on github.
+
+= Credits
+
+Thanks to IglooNET s.r.o. (my current employer) for that I was allowed to work on this plugin and release it under MIT licence
