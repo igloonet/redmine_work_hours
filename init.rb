@@ -14,7 +14,7 @@ Redmine::Plugin.register :redmine_work_hours do
 
 
   default_settings = {}
-  I18n.t('date.day_names', :locale => :en).each do |day_name|
+  I18n.t('date.day_names', :locale => :en).map(&:last).each do |day_name|
     default_settings[day_name.downcase+'_hours_from'] = '8:00'
     default_settings[day_name.downcase+'_hours_to'] = '17:00'
   end
