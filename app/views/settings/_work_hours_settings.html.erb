@@ -1,7 +1,7 @@
-<% localized_day_names = t('date.day_names') %>
-<% t('date.day_names',:locale => :en).each_with_index do |day_name, n| %>
+<% localized_day_names = I18n.t('date.day_names', :locale => :en).sort {|a,b| a.first <=> b.first} %>
+<% localized_day_names.each do |n, day_name| %>
   <p>
-    <label><%= "#{localized_day_names[n]} #{t('from')} - #{t('to')}" %></label>
+    <label><%= "#{day_name} #{t('from')} - #{t('to')}" %></label>
     <%= text_field_tag "settings[#{day_name.downcase}_hours_from]", @settings["#{day_name.downcase}_hours_from"], :size => 6 %>
     <%=  text_field_tag "settings[#{day_name.downcase}_hours_to]", @settings["#{day_name.downcase}_hours_to"], :size => 6 %>
   </p>
