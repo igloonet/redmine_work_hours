@@ -20,6 +20,9 @@ That's it, now you should be good to go
 
 = Changelog
 
+0.2 (2012-09-27)
+ * You can specify holidays which will show "not working hours" text during whole holiday
+
 0.1 (2011-01-14)
  * Plugin allows to display text when creating or updating issues
 
