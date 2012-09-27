@@ -8,4 +8,5 @@ cs:
   text_not_during_work_hours: "Text zobrazený mimo pracovní dobu"
   field_text_during_work_hours: "Text"
   field_text_not_during_work_hours: "Text"
-
+  holidays: "Svátky"
+  holidays_hint: "Co řádek to datum, zadávejte ve tvaru M.D., např. 1.1. nebo 24.12."

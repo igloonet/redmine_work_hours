@@ -8,4 +8,5 @@ en:
   text_not_during_work_hours: "Text displayed out of work hours"
   field_text_during_work_hours: "Text"
   field_text_not_during_work_hours: "Text"
-
+  holidays: "Holiday"
+  holidays_hint: "One date per line, use format M.D., eg. 1.1. or 24.12."

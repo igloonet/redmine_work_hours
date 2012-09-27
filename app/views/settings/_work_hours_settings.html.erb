@@ -5,4 +5,11 @@
     <%= text_field_tag "settings[#{day_name.downcase}_hours_from]", @settings["#{day_name.downcase}_hours_from"], :size => 6 %>
     <%=  text_field_tag "settings[#{day_name.downcase}_hours_to]", @settings["#{day_name.downcase}_hours_to"], :size => 6 %>
   </p>
+  
 <% end %>
+
+  <p>
+    <label><%= t('holidays') %></label>
+    <%= text_area_tag 'settings[holidays]', @settings[:holidays], :cols => 30, :rows => 10 %><br />
+    <%= t('holidays_hint') %>
+  </p>

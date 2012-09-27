@@ -14,6 +14,9 @@ class WorkHoursIssueHook  < Redmine::Hook::ViewListener
       work_hours_from = Time.parse("#{setting[(day+'_hours_from').to_sym]}:00")
       work_hours_to = Time.parse("#{setting[(day+'_hours_to').to_sym]}:00")
       text_to_display = Time.now > work_hours_from && Time.now < work_hours_to ? :text_during_work_hours : :text_not_during_work_hours
+      if (setting[:holidays] || '').split("\n").include?("#{Date.today.day}.#{Date.today.month}.")
+        text_to_display = :text_not_during_work_hours
+      end
 
       text = textilizable(WorkHoursProjectSetting.first(:conditions => ['project_id = ?', context[:project].id]).send(text_to_display))
       return "<div class=\"wiki\">#{text}</div>"
