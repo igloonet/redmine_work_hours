@@ -1,3 +1,4 @@
+# encoding: UTF-8
 require 'redmine'
 require 'work_hours_projects_helper_patch'
 require 'work_hours_issue_hook'
