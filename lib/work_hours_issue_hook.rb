@@ -9,7 +9,7 @@ class WorkHoursIssueHook  < Redmine::Hook::ViewListener
   #
   def view_issues_form_details_top(context = { })
     if context[:project].module_enabled?('work_hours')
-      setting = Setting.plugin_redmine_work_hours
+      setting = Setting.plugin_redmine_work_hours.with_indifferent_access
       day = I18n.t('date.day_names', :locale => :en)[Time.now.wday].downcase
       work_hours_from = Time.parse("#{setting[(day+'_hours_from').to_sym]}:00")
       work_hours_to = Time.parse("#{setting[(day+'_hours_to').to_sym]}:00")
