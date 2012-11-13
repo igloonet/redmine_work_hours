@@ -1,5 +1,5 @@
 <% localized_day_names = I18n.t('date.day_names', :locale => :en).sort {|a,b| a.first <=> b.first} %>
-<% localized_day_names.each do |n, day_name| %>
+<% localized_day_names.each do |day_name| %>
   <p>
     <label><%= "#{day_name} #{t('from')} - #{t('to')}" %></label>
     <%= text_field_tag "settings[#{day_name.downcase}_hours_from]", @settings["#{day_name.downcase}_hours_from"], :size => 6 %>
