@@ -21,7 +21,8 @@ class WorkHoursIssueHook  < Redmine::Hook::ViewListener
       end
 
       text = textilizable(WorkHoursProjectSetting.first(:conditions => ['project_id = ?', context[:project].id]).send(text_to_display))
-      return "<div class=\"wiki\"><div class=\"workhours\">#{text}</div></div>"
+      return "<div class=\"wiki\"><div class=\"workhours\" style=\"background: #e6d9f0; padding: 6px 0px;\">#{text}</div></div>"
+
     else
       return ''
     end
