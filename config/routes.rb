@@ -1,0 +1,1 @@
+resources :work_hours_settings
