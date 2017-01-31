@@ -4,7 +4,7 @@ class WorkHoursProjectSetting < ActiveRecord::Base
   validates_presence_of :project_id
 
   def self.find_or_create(project)
-    setting = WorkHoursProjectSetting.find(:first, :conditions => ['project_id = ?', project.id])
+    setting = WorkHoursProjectSetting.find_by(['project_id = ?', project.id])
     unless setting
       setting = WorkHoursProjectSetting.new
       setting.project_id = project.id
