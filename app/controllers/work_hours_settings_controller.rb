@@ -8,7 +8,9 @@ class WorkHoursSettingsController < ApplicationController
   def update
     @setting = WorkHoursProjectSetting.find_or_create(@project)
 
-    @setting.attributes = params[:setting]
+    # @setting.safe_attributes = params[:setting]
+    @setting.text_during_work_hours = params[:setting][:text_during_work_hours]
+    @setting.text_not_during_work_hours = params[:setting][:text_not_during_work_hours]
     @setting.updated_by = @user_id
 
     @setting.save!
